@@ -1444,8 +1444,8 @@ function generateTableForEditQuestion(solution) {
                     input.addClass("form-control");
                     input.css("width", "70px");
                     input.css("float", "left");
-                    var coefficiëntOfElement = $(coefficientSols[c - 1]).text();
-                    $(input).val(coefficiëntOfElement);
+                    var coefficientOfElement = $(coefficientSols[c - 1]).text();
+                    $(input).val(coefficientOfElement);
                     $(input).prop("readonly", true);
                     $(input).appendTo(td);
                     $(td).appendTo(tr);

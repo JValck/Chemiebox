@@ -49,4 +49,6 @@ local.properties
 # TeXlipse plugin
 .texlipse
 
+#Igore libs (comment if unwanted)
+web/WEB-INF/lib/
 #End Eclipse gitignore
