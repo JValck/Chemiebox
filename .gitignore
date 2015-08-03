@@ -51,4 +51,8 @@ local.properties
 
 #Igore libs (comment if unwanted)
 web/WEB-INF/lib/
-#End Eclipse gitignore
+#End of Eclipse gitignore
+
+#Ignore the config file and authenticator
+src/java/configuration/config.conf
+src/java/ldap/Authenticator.java
