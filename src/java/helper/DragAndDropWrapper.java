@@ -98,7 +98,9 @@ public class DragAndDropWrapper implements ArrowChangeable{
         List<String> readable = new ArrayList<String>();
         for (String element : leftSide) {
             element = element.replaceAll("^[0-9]+", "");
-            readable.add(DatabaseToHTMLConverter.convertToHTML(element));
+            if(!element.isEmpty()){//prevent empty item to drag
+            	readable.add(DatabaseToHTMLConverter.convertToHTML(element));
+            }
         }
         HashSet<String> left = new HashSet<String>(readable);
         return new ArrayList<String>(left);
@@ -108,7 +110,9 @@ public class DragAndDropWrapper implements ArrowChangeable{
         List<String> readable = new ArrayList<String>();
         for (String element : rightSide) {
             element = element.replaceAll("^[0-9]+", "");
-            readable.add(DatabaseToHTMLConverter.convertToHTML(element));
+            if(!element.isEmpty()){//prevent empty item to drag
+            	readable.add(DatabaseToHTMLConverter.convertToHTML(element));
+            }
         }
         HashSet<String> right = new HashSet<String>(readable);
         return new ArrayList<String>(right);
