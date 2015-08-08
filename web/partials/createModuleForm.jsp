@@ -35,7 +35,8 @@
                   <div class="form-group">
                     <label for="instructions" class="col-lg-2 control-label">Instructies</label>
                     <div class="col-lg-10">
-                        <input type="text" class="enriched form-control" name="instructions" id="name" title="Instructies bij het invullen van de bijbehorende vragen"/>                    </div> 
+                        <p type="text" class="enriched form-control" name="instructions" id="instructions" title="Instructies voor de bijbehorende vragen"/><p>                    
+                    </div> 
                   </div>
                     <div class="form-group">
                     <label for="max" class="col-lg-2 control-label"># pogingen</label>

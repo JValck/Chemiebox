@@ -34,7 +34,7 @@
                         <div class="form-group">
                             <label for="instructions" class="col-lg-2 control-label">Instructies</label>
                             <div class="col-lg-10">
-                                <input type="text" class="enriched form-control" name="instructions" id="name" title="Instructies bij het invullen van de bijbehorende vragen"/>                    
+                                <p type="text" class="enriched form-control" name="instructions" id="instructions" title="Instructies voor de bijbehorende vragen">${module.instructions}</p>                    
                             </div> 
                         </div>
                         <div class="form-group">
@@ -117,6 +117,7 @@
                 </div>    
             </div>
         </div>
+        <script src="enrichedElement/js/enrichedElement.js" type="text/javascript"></script>
     </body>
     <my:footer/>                    
 </html>

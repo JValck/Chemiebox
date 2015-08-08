@@ -7,14 +7,18 @@ var rightTableSolution = "";
 var finalSolForCheck;
 
 function getModuleForm() {
-    $(".choice").load('partials/createModuleForm.jsp');
+    $(".choice").load('partials/createModuleForm.jsp', function () {
+        refreshEnriched();
+    });
 }
 
 function saveModule() { //Validatiefunctie, pas wanneer true, wordt verder gegaan naar de servlet
     var form = document.getElementById('moduleForm');
     var chapter = form.chapter.value;
     var name = form.name.value;
-    var instructions = form.instructions.value;
+    var instructions = $("#instructions").html();
+    $('<input>').attr({type:"hidden", id:"instructions", name:"instructions"}).appendTo($(form));
+    form.instructions.value=instructions;
     var startyear = form.startyear.value;
     var startmonth = form.startmonth.value;
     var startday = form.startday.value;

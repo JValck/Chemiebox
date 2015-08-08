@@ -49,6 +49,7 @@ public class ModuleMapper {
             while (resultSet.next()) {//update cursor
                 Module module = new Module();
                 module.setName(resultSet.getString("name"));
+                module.setInstructions(resultSet.getString("instructies"));
                 module.setId(resultSet.getLong("id"));
                 module.setMaxTries(resultSet.getInt("max"));
                 Calendar startCal = Calendar.getInstance();//create a calendar instance for the start date
@@ -77,8 +78,8 @@ public class ModuleMapper {
         try {
             //disable auto-commit
             dbConnection.setAutoCommit(false);
-            String query = "INSERT INTO module (name, max, deadline, start, chapter)"
-                    + "VALUES (?, ?, ?, ?, ?);";
+            String query = "INSERT INTO module (name, max, deadline, start, chapter, instructies)"
+                    + "VALUES (?, ?, ?, ?, ?,?);";
             PreparedStatement stmt = dbConnection.prepareStatement(query);
             //fill in the question marks
             stmt.setString(1, module.getName());
@@ -86,6 +87,7 @@ public class ModuleMapper {
             stmt.setDate(3, new java.sql.Date(module.getDeadline().getTimeInMillis()));
             stmt.setDate(4, new java.sql.Date(module.getStart().getTimeInMillis()));
             stmt.setString(5, module.getChapter());
+            stmt.setString(6, module.getInstructions());
             stmt.executeUpdate();//may be an insert, update or delete            
             dbConnection.commit();
             stmt.close();
@@ -124,7 +126,7 @@ public class ModuleMapper {
      * @throws SQLException see {@link Connection#rollback()}
      */
     public void updateModule(Module updatedModule) throws SQLException {
-        String query = "UPDATE chemiedb.module SET (name, max, deadline, start, chapter) = (?, ?, ?, ?, ?) WHERE id = ? ;";
+        String query = "UPDATE chemiedb.module SET (name, max, deadline, start, chapter, instructies) = (?, ?, ?, ?, ?,?) WHERE id = ? ;";
         try {
             //disable auto-commit
             dbConnection.setAutoCommit(false);
@@ -135,8 +137,9 @@ public class ModuleMapper {
             stmt.setDate(3, new java.sql.Date(updatedModule.getDeadline().getTimeInMillis()));
             stmt.setDate(4, new java.sql.Date(updatedModule.getStart().getTimeInMillis()));
             stmt.setString(5, updatedModule.getChapter());
+            stmt.setString(6, updatedModule.getInstructions());
             //set the where clause
-            stmt.setLong(6, updatedModule.getId());
+            stmt.setLong(7, updatedModule.getId());
             stmt.executeUpdate();//may be an insert, update or delete            
             dbConnection.commit();
             stmt.close();
@@ -174,6 +177,7 @@ public class ModuleMapper {
             startCal.setTime(resultSet.getDate("start", startCal));//convert the sql to date
             module.setStart(startCal);//setting the property
             module.setChapter(resultSet.getString("chapter"));
+            module.setInstructions(resultSet.getString("instructies"));
             module.setId(moduleId);
             }
             prepStmt.close();//closing the statement
