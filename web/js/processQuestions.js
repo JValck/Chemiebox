@@ -9,7 +9,9 @@ $(".sendButton").click(function(event) {
 function getNextQuestion() {
     clearBr_Moz();// breaks na spatie eruithalen
     var merged = fetchData();
+    merged = fixComma(merged);
     submitCurrent(merged);
+    console.log(merged);
     return false;//else it would refresh
 }
 
@@ -36,8 +38,14 @@ function fetchData() {
         merged = JSON.stringify(merged);
         merged = merged.replace(/\s+/g,"");
     }
-    console.log(merged);
+    //console.log(merged);
     return merged;
+}
+function fixComma(answerAsArray){
+	for(var idx = 0; idx < answerAsArray.length; idx++){
+		answerAsArray[idx] = answerAsArray[idx].replace(new RegExp(",","g"), ".");
+	}
+	return answerAsArray;
 }
 function correctedArray(merged) {
     var correct = [];
@@ -96,8 +104,10 @@ function submitCurrent(merged) {
             var text = ($(data).find("questionText").text());
             var progress = $(data).find("progress").text();
             var strategy = $(data).find("strategy").text().trim();
+            var instructions = $(data).find("info").text().trim();
             if (progress > 100) {
                 $("#questionForm").empty();
+                $(".moduleInfo").empty();
                 $("<h4 style='color:#29ABE0'>Alle vragen van deze module zijn beantwoord</h4>").appendTo("#endMsg");
                 showFeedback($("#endMsg"), data);
                 $("<a href=\"ChemieboxController?action=startTest\" class=\"btn btn-primary\">Terug naar het overzicht</a>").appendTo("#endMsg");

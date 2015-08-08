@@ -46,6 +46,7 @@ public class StartModuleCommand implements Command {
         String studnr = (String) (session.getAttribute("userId"));
         
         Module current = facade.getModule(moduleId);
+        request.setAttribute("moduleInfo", current.getInstructions());
 
         if (current.getMaxTries() <= facade.getTimesTried(moduleId, studnr)) {
             next = "overview.jsp";

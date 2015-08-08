@@ -30,7 +30,8 @@
             
         </div>
         <div id="loading"> </div>
-    </div>           
+    </div>
+    <script src="enrichedElement/js/enrichedElement.js" type="text/javascript"></script>
     <my:footer/>                    
 </body>
 </html>

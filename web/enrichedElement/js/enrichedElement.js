@@ -99,7 +99,7 @@ function elementFocussed() {//handles the event if the element is focussed
     currentFocus.addEventListener("keydown", keyPressed);
     currentFocus.addEventListener("keyup", keyReleased);
     //remove placeholder
-    if (currentFocus.innerHTML === "Hier typen") {
+    if (/hier\s+typen/i.test(currentFocus.innerHTML)) {
         currentFocus.innerHTML = "";
     }
     //show help bar    
@@ -512,7 +512,7 @@ function sendInfo() {
 }
 
 function HtmlToDatabaseLanguage(str) {
-    str = str.replace(/^\s+/, '');
+    str = str.replace(/\s+/, "");
     str = str.replace(new RegExp("→", 'g'), "#->#");
     str = str.replace(new RegExp("⇔", 'g'), "#<=>#");
     str = str.replace(new RegExp("</sub><sub>", 'g'), "");
@@ -527,7 +527,7 @@ function HtmlToDatabaseLanguage(str) {
     //str = str.replace(new RegExp("\\+", 'g'),"");
     str = str.replace(new RegExp("<br>", 'g'), "");
     str = str.replace(new RegExp("</br>", 'g'), "");
-    str = str.replace(/\|\s*(.*)\s*\|/, "|$1|");// remove spaces
+    str = str.replace(/\|\s*(.*)\s*\|/, "|$1|");// remove spaces within coefficients
     str = str.replace(/\|([0-9]+)-\|/g, "|-$1|");//OH2- ==> OH-2
     str = str.replace(/\|-\|/g, "|-1|");//OH- ==> OH-1
     str = str.replace(/\|+\|/g, "|1|");//OH+ ==> OH+1

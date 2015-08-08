@@ -38,6 +38,7 @@ public class SaveQuestionCommand implements Command {
                 solutiontext = solutiontext.replaceAll("#-&gt;#", "#->#");
                 solutiontext = solutiontext.replaceAll("#&lt;=&gt;#", "#<=>#");
                 solutiontext = solutiontext.replaceAll("#&amp;#", "#&#");
+                solutiontext = solutiontext.replaceAll(",", ".");
             }
             int solutionId = 0;
             if (questiontext != null && !questiontext.equals("") && solutiontext != null && !solutiontext.equals("") && moduleId > 0 && strategyId > 0 && maxpoints > 0) { //extra check

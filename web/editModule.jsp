@@ -32,14 +32,20 @@
                             </div> 
                         </div>
                         <div class="form-group">
+                            <label for="instructions" class="col-lg-2 control-label">Instructies</label>
+                            <div class="col-lg-10">
+                                <p style="height:auto; min-height: 46px" type="text" class="enriched form-control" name="instructions" id="instructions" title="Instructies voor de bijbehorende vragen">${module.instructions}</p>                    
+                            </div> 
+                        </div>
+                        <div class="form-group">
                             <label for="max" class="col-lg-2 control-label"># pogingen</label>
                             <div class="col-lg-10">
                                 <select style="float:left; width: 100px;"class="form-control"name="max" title="Maximum aantal keren dat de student de module mag invullen">
                                     <option value="${module.maxTries}" selected>${module.maxTries}</option>
                                     <% for (int i = 1; i <= 100; i++) {%>
-                                        <c:if test="${i != module.maxTries}">
+                                    <c:if test="${i != module.maxTries}">
                                         <option value="<%= i%>"><%= i%></option>
-                                        </c:if>
+                                    </c:if>
                                     <% }%>
                                 </select> 
                             </div> 
@@ -50,9 +56,9 @@
                                 <select style="float:left; width: auto;"class="form-control"name="startday" title="Dag van de maand">
                                     <option value="${module.startWrapper.day}" selected>${module.startWrapper.day}</option>
                                     <% for (int i = 1; i <= 31; i++) {%>
-                                        <c:if test="${i ne module.startWrapper.day}">
+                                    <c:if test="${i ne module.startWrapper.day}">
                                         <option value="<%= i%>"><%= i%></option>
-                                        </c:if>
+                                    </c:if>
                                     <% }%>
                                 </select> 
                                 <select style="float:left; width: auto; margin-left: 0.75em;" class="form-control"name="startmonth" title="Maand">
@@ -80,12 +86,12 @@
                                 <select style="float:left; width: auto;"class="form-control"name="endday" title="Dag van de maand">
                                     <option value="${module.deadlineWrapper.day}" selected>${module.deadlineWrapper.day}</option>
                                     <% for (int i = 1; i <= 31; i++) {%>
-                                        <c:if test="${i ne module.deadlineWrapper.day}">
+                                    <c:if test="${i ne module.deadlineWrapper.day}">
                                         <option value="<%= i%>"><%= i%></option>
-                                        </c:if>
+                                    </c:if>
                                     <% }%>
                                 </select> 
-                                
+
                                 <select style="float:left; width: auto; margin-left: 0.75em;" class="form-control"name="endmonth" title="Maand">
                                     <option value="${module.deadlineWrapper.month}" selected><fmt:formatDate pattern="MMMM" value="${module.deadline.time}" /></option>
                                     <% for (int i = 0; i <= 11; i++) {%>                                    
@@ -111,6 +117,7 @@
                 </div>    
             </div>
         </div>
+        <script src="enrichedElement/js/enrichedElement.js" type="text/javascript"></script>
     </body>
-        <my:footer/>                    
+    <my:footer/>                    
 </html>

@@ -35,6 +35,7 @@ public class SaveModuleCommand implements Command {
             int max = Integer.parseInt(request.getParameter("max"));
             String chapter = request.getParameter("chapter");
             String name = request.getParameter("name");
+            String instructions = request.getParameter("instructions");
             if (chapter != null && !chapter.equals("") && name != null && !name.equals("")) { //extra check
                 Calendar startcalendar = Calendar.getInstance();
                 startcalendar.set(Calendar.YEAR, startyear);
@@ -44,7 +45,7 @@ public class SaveModuleCommand implements Command {
                 endcalendar.set(Calendar.YEAR, endyear);
                 endcalendar.set(Calendar.MONTH, endmonth);
                 endcalendar.set(Calendar.DAY_OF_MONTH, endday);
-                Module module = new Module(name, chapter, max, endcalendar, startcalendar);
+                Module module = new Module(name, chapter, max, endcalendar, startcalendar, instructions);
                 facade.addModule(module);
                 List<Module> modules = facade.getAllModules();
                 request.setAttribute("modules", modules);
