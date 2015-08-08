@@ -23,8 +23,8 @@ import java.util.logging.Level;
 public class Authenticator {
     
     public boolean authenticate(String studnr, String password){
-        //return true;
-        boolean authenticated;
+        return true;
+        /*boolean authenticated;
         String server = "rolf.khleuven.be";
         int port = 636;
         String domain = "KHLEUVEN";
@@ -46,7 +46,7 @@ public class Authenticator {
             e.printStackTrace();
             authenticated = false;
         }
-        return authenticated;
+        return authenticated;*/
     }
     
     public static boolean isLoggedIn(HttpServletRequest request){

@@ -49,4 +49,10 @@ local.properties
 # TeXlipse plugin
 .texlipse
 
-#End Eclipse gitignore
+#Igore libs (comment if unwanted)
+web/WEB-INF/lib/
+#End of Eclipse gitignore
+
+#Ignore the config file and authenticator
+src/java/configuration/config.conf
+src/java/ldap/Authenticator.java
