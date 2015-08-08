@@ -21,7 +21,7 @@
                     </p>
                     <p>Typ de gevraagde oplossing in het vakje. 
         Voor sub- of superscript klik je in het blauwe vakje, dat verschijnt als je op het veldje hebt geklikt, op X<sub>2</sub> voor sub- en X<sup>2</sup> voor superscript.
-        Daarna klik je terug in het veldje en typ je het gewenste gatel in.
+        Daarna klik je terug in het veldje en typ je het gewenste getal in.
         Om terug normaal te typen klik je in het blauwe vakje op hetgeen je eerder had gekozen, om het uit te zetten.
         Vervolgens klik je op het veldje waardoor je terug overschakelt naar normale tekst.<br>
         
