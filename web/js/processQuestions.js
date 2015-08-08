@@ -9,7 +9,9 @@ $(".sendButton").click(function(event) {
 function getNextQuestion() {
     clearBr_Moz();// breaks na spatie eruithalen
     var merged = fetchData();
+    merged = fixComma(merged);
     submitCurrent(merged);
+    console.log(merged);
     return false;//else it would refresh
 }
 
@@ -36,8 +38,14 @@ function fetchData() {
         merged = JSON.stringify(merged);
         merged = merged.replace(/\s+/g,"");
     }
-    console.log(merged);
+    //console.log(merged);
     return merged;
+}
+function fixComma(answerAsArray){
+	for(var idx = 0; idx < answerAsArray.length; idx++){
+		answerAsArray[idx] = answerAsArray[idx].replace(new RegExp(",","g"), ".");
+	}
+	return answerAsArray;
 }
 function correctedArray(merged) {
     var correct = [];
