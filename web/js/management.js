@@ -36,6 +36,7 @@ function saveModule() { //Validatiefunctie, pas wanneer true, wordt verder gegaa
         return false;
     }
     else {
+        clearBr_Moz();
         return true;
     }
 }

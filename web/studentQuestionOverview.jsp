@@ -54,7 +54,7 @@
             </table>              
         </div>   
         <script src="js/processQuestions.js" type="text/javascript"></script>
-        <p style="padding-bottom: 1em;">Laatste software update: 25/04/2015 - 19h46</p>
+        <p style="padding-bottom: 1em;">Laatste software update: 08/08/2015 - 18h50</p>
     </body>
         <my:footer/>                    
 </html>

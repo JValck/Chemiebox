@@ -99,7 +99,7 @@ function elementFocussed() {//handles the event if the element is focussed
     currentFocus.addEventListener("keydown", keyPressed);
     currentFocus.addEventListener("keyup", keyReleased);
     //remove placeholder
-    if (currentFocus.innerHTML === "Hier typen") {
+    if (/hier\s+typen/i.test(currentFocus.innerHTML)) {
         currentFocus.innerHTML = "";
     }
     //show help bar    

@@ -35,7 +35,7 @@
                   <div class="form-group">
                     <label for="instructions" class="col-lg-2 control-label">Instructies</label>
                     <div class="col-lg-10">
-                        <p type="text" class="enriched form-control" name="instructions" id="instructions" title="Instructies voor de bijbehorende vragen"/><p>                    
+                        <p style="height:auto; min-height: 46px;" type="text" class="enriched form-control" name="instructions" id="instructions" title="Instructies voor de bijbehorende vragen"></p>                    
                     </div> 
                   </div>
                     <div class="form-group">
