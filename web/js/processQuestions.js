@@ -104,8 +104,10 @@ function submitCurrent(merged) {
             var text = ($(data).find("questionText").text());
             var progress = $(data).find("progress").text();
             var strategy = $(data).find("strategy").text().trim();
+            var instructions = $(data).find("info").text().trim();
             if (progress > 100) {
                 $("#questionForm").empty();
+                $(".moduleInfo").empty();
                 $("<h4 style='color:#29ABE0'>Alle vragen van deze module zijn beantwoord</h4>").appendTo("#endMsg");
                 showFeedback($("#endMsg"), data);
                 $("<a href=\"ChemieboxController?action=startTest\" class=\"btn btn-primary\">Terug naar het overzicht</a>").appendTo("#endMsg");
