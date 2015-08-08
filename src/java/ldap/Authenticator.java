@@ -46,13 +46,13 @@ public class Authenticator {
             e.printStackTrace();
             authenticated = false;
         }
-        return authenticated;
+        return authenticated;*/
     }
     
     public static boolean isLoggedIn(HttpServletRequest request){
         HttpSession session = request.getSession();
         boolean correct=session.getAttribute("userId")!=null;
         
-       return correct;*/
+       return correct;
     }
 }
