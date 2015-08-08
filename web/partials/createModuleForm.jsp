@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">       
     </head>
     <body>
         <% Months months = new Months(); List<String> maanden = months.getMonths(); %>
@@ -31,6 +31,11 @@
                     <div class="col-lg-10">
                       <input class="form-control" name="name" id="name" title="Naam van de module">
                     </div> 
+                  </div>
+                  <div class="form-group">
+                    <label for="instructions" class="col-lg-2 control-label">Instructies</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="enriched form-control" name="instructions" id="name" title="Instructies bij het invullen van de bijbehorende vragen"/>                    </div> 
                   </div>
                     <div class="form-group">
                     <label for="max" class="col-lg-2 control-label"># pogingen</label>

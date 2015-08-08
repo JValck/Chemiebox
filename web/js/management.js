@@ -14,6 +14,7 @@ function saveModule() { //Validatiefunctie, pas wanneer true, wordt verder gegaa
     var form = document.getElementById('moduleForm');
     var chapter = form.chapter.value;
     var name = form.name.value;
+    var instructions = form.instructions.value;
     var startyear = form.startyear.value;
     var startmonth = form.startmonth.value;
     var startday = form.startday.value;

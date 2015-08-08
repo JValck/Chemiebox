@@ -7,7 +7,7 @@ import java.util.Calendar;
  * @author r0430844
  */
 public class Module {
-    private String name, chapter;
+    private String name, chapter, instructions;
     private int maxTries;
     private Calendar start, deadline;
     private long id;
@@ -23,12 +23,13 @@ public class Module {
         this.id = id;
     }
     
-    public Module(String name, String chapter, int maxTries, Calendar deadline, Calendar start) {
+    public Module(String name, String chapter, int maxTries, Calendar deadline, Calendar start, String instructions) {
         this.name = name.trim();
         this.chapter = chapter.trim();
         this.maxTries = maxTries;
         this.start = start;
         this.deadline = deadline;
+        this.instructions=instructions;
     }
 
     public String getName() {
@@ -46,6 +47,14 @@ public class Module {
     public void setChapter(String chapter) {
         this.chapter = chapter.trim();
     }
+    public String getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(String instructions) {
+        this.instructions = instructions.trim();
+    }
+    
 
     public int getMaxTries() {
         return maxTries;

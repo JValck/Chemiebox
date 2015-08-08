@@ -44,6 +44,7 @@ public class EditModule implements Command {
         Module module = facade.getModule(id);
         module.setChapter(request.getParameter("chapter"));
         module.setName(request.getParameter("name"));
+        module.setInstructions(request.getParameter("instructions"));
         module.setMaxTries(Integer.parseInt(request.getParameter("max")));
         Calendar start = Calendar.getInstance();
         start.set(Integer.parseInt(request.getParameter("startyear")), Integer.parseInt(request.getParameter("startmonth")), Integer.parseInt(request.getParameter("startday")));
