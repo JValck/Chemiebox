@@ -55,4 +55,3 @@ web/WEB-INF/lib/
 
 #Ignore the config file and authenticator
 src/java/configuration/config.conf
-src/java/ldap/Authenticator.java
